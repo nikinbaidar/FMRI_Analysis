@@ -48,7 +48,7 @@ do
         pushd ${SUBJECT}
 
         ###########################################################
-        # Spatially normalize the anatomical dataset to MNI space #
+        # Spatially normalize the anatomical dataset to Talarich space #
         ###########################################################
 
         # Uniformly distribute the white matter in the brain tissue.

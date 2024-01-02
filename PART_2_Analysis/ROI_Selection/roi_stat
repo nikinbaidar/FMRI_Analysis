@@ -1,0 +1,12 @@
+rtpath='/media/namrata/16E7-2E94/FinalYearProject/fc_analyis'
+rtdir='/media/namrata/16E7-2E94/FinalYearProject/fc_analyis/roi_selection'
+ROIs='rHipp cHipp vCa dCa'
+
+cd ${rtpath}/connectivity_value
+for roi in ${ROIs}
+do
+rm -f HC_${roi}.txt
+rm -f MDD_${roi}.txt
+   3dROIstats -mask ${rtpath}/clustermask/M_*_${roi}_Clust_Mask+tlrc.* ${rtdir}/HC/ROI-*/*_${roi}_z+tlrc.HEAD >> HC_${roi}.txt
+   3dROIstats -mask ${rtpath}/clustermask/M_*_${roi}_Clust_Mask+tlrc.* ${rtdir}/MDD/ROI-*/*_${roi}_z+tlrc.HEAD  >> MDD_${roi}.txt
+done 
